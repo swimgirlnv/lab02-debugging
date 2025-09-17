@@ -4,15 +4,19 @@ Worked with Jackie & Logan.
 
 [Shader is here!](https://www.shadertoy.com/view/wclBWf)
 
-Bug 1: ln 97, vec uv2 = 2.0 * uv - vec2(1.0); => vec2
+### Bug 1: ln 97, vec uv2 = 2.0 * uv - vec2(1.0); => vec2
 - Now we can see something compile!
-Bug 2: ln 100, raycast(uv, dir, eye, ref); => uv2
+  
+### Bug 2: ln 100, raycast(uv, dir, eye, ref); => uv2
 - Instead of uv we should be using uv2 (figured this out since we weren't using uv2 anywhere and tried plugging in).
-Bug 3: ln 11, x/x => x/y
+  
+### Bug 3: ln 11, x/x => x/y
 - In raycast, we noticed that `H *= len * iResolution.x / iResolution.x;`. x/x? Let's try x/y!
-Bug 4: ln 18, increase marching 64 => 128
+  
+### Bug 4: ln 18, increase marching 64 => 128
 - Noticed a 'black hole effect' around the spheres, let's try increasing the number in the for loop!
-Bug 5: ln 75, reflection should be dir not eye
+  
+### Bug 5: ln 75, reflection should be dir not eye
 - `reflect` is incident vector and normal vector. The incident vector should not be `eye`, it should be `dir`!
 
 # Setup 
